@@ -2070,3 +2070,422 @@ ActionView::Template::Error (undefined method `to_model' for 4:Fixnum):
   Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (71.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:24:59 -0700
+
+LoadError (cannot load such file -- /Users/JetLifeJig/Documents/code/jigpedia/Jigpedia/config/routes.rb):
+  activesupport (4.2.5) lib/active_support/dependencies.rb:268:in `load'
+  activesupport (4.2.5) lib/active_support/dependencies.rb:268:in `block in load'
+  activesupport (4.2.5) lib/active_support/dependencies.rb:240:in `load_dependency'
+  activesupport (4.2.5) lib/active_support/dependencies.rb:268:in `load'
+  railties (4.2.5) lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+  railties (4.2.5) lib/rails/application/routes_reloader.rb:40:in `each'
+  railties (4.2.5) lib/rails/application/routes_reloader.rb:40:in `load_paths'
+  railties (4.2.5) lib/rails/application/routes_reloader.rb:16:in `reload!'
+  railties (4.2.5) lib/rails/application/routes_reloader.rb:26:in `block in updater'
+  activesupport (4.2.5) lib/active_support/file_update_checker.rb:75:in `call'
+  activesupport (4.2.5) lib/active_support/file_update_checker.rb:75:in `execute'
+  railties (4.2.5) lib/rails/application/routes_reloader.rb:7:in `execute'
+  railties (4.2.5) lib/rails/application/finisher.rb:81:in `block (2 levels) in <module:Finisher>'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:446:in `instance_exec'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:446:in `block in make_lambda'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:192:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:192:in `block in simple'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_prepare_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:83:in `prepare!'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:71:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/JetLifeJig/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/JetLifeJig/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/JetLifeJig/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.2ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (385.7ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (410.5ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:24:59 -0700
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/JetLifeJig/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/JetLifeJig/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/JetLifeJig/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.2ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (365.4ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (384.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:31:38 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 389ms (Views: 357.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:31:38 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-28 12:31:39 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-28 12:31:39 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-28 12:31:39 -0700
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-05-28 12:31:41 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KQ0pwAzR+sCfn1iYjIsIKheiSguXjKt3uiJZe99ZDkmJ+wJgHFBDl9nbzOxamBdVUQCuV4isCM/LwFeARgXomA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 333ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:31:41 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:31:41 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (8.6ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 64ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-05-28 12:31:48 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jn9t/qACEBY+BjvLiuxuiy7pZsye5RchDKiWEt7tKGEux3N+scl9Zk8C6CBaNP6RM2lBnRZbxAU5vhNAefcrPg==", "user"=>{"email"=>"Jiggga117@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "jiggga117@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-05-26 06:26:54.133314"], ["current_sign_in_at", "2016-05-28 19:31:48.479766"], ["sign_in_count", 4], ["updated_at", "2016-05-28 19:31:48.480518"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 160ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:31:48 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-05-28 12:31:52 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZLgNB0J5VfgbhV8wcMat8/Cn0Pl/GZH5I2cWetPiWNXert9gI6Sxc0aHj71nrVaxrkM+ADb41onu3UGRzQwy0A=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:31:52 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:31:52 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (3.8ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-28 12:32:00 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (3.0ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/registrations/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-28 12:32:16 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KBscXw7zpEMeJCk1HWeKSaXiSPWiv2+M9M9PI9p5wd1JV1tSpCrn49g+y4IISHE2765RfFZ1pN6Nk31sf3H1iw==", "user"=>{"email"=>"Jig@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jig@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "jig@gmail.com"], ["encrypted_password", "$2a$11$1w/tGsqpm9.lwLTeAC2SjeshXn1xdgpfLwJ2lDKbbCCMjtJsIqh5."], ["created_at", "2016-05-28 19:32:16.446769"], ["updated_at", "2016-05-28 19:32:16.446769"], ["confirmation_token", "BqRa-kqjDq1jPGwi7kST"], ["confirmation_sent_at", "2016-05-28 19:32:16.447031"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/mailer/confirmation_instructions.html.erb (2.4ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 145.4ms
+
+Sent mail to jig@gmail.com (1225.2ms)
+Date: Sat, 28 May 2016 12:32:16 -0700
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: jig@gmail.com
+Message-ID: <5749f24094b1c_12f23fd5763ef220230de@Jigeshs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome jig@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=BqRa-kqjDq1jPGwi7kST">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1542ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:32:17 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:32:17 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (3.7ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-05-28 12:32:24 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ikOCqEuRg+bhZSCQzJlTUXp5DCIJbxH6VRm/QIRbo2fZUkHC/cFr12fdjVWHZ4yD6X9uXzvdxWQCFSypxla2w==", "user"=>{"email"=>"Jig@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "jig@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 401 Unauthorized in 135ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:32:25 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (3.8ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-05-28 12:32:33 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kbccuNrhpIKfMKcn9QUeSMQWxqPWcPZEmmfh5Tpx22nw+1u1cDjnIlkqRZDgKuU3jlrfKiK6PRbjO9Oqn3nvPw==", "user"=>{"email"=>"Jig@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "jig@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 401 Unauthorized in 135ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:32:33 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (2.9ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-05-28 12:32:39 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9cZJgNLb3A9JSTm1eFV4Z9lasV7J9NbWU+yAvwA4H/GUig6NeAKfr49T2wJteoMYkxao1z0+HYQqsLLwpTArpw==", "user"=>{"email"=>"Jiggga117@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "jiggga117@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-05-28 19:31:48.479766"], ["current_sign_in_at", "2016-05-28 19:32:39.766914"], ["sign_in_count", 5], ["updated_at", "2016-05-28 19:32:39.767642"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 144ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:32:39 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-05-28 12:32:42 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AzCyjvM913uxq2Yh1R2TsaJ2xeIyFEPvzPzcWQGSpZzdsXR9JNIc5+3V8qSckFRQZx+26qedx3VcXH7pCQM0dg=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-28 12:32:42 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:32:42 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (5.3ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-28 12:32:44 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/registrations/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-28 12:32:57 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+63wcmUdkb0lJKROrlBIxRxFeLSRpTI1W6tX//VR9DTpOheOYKVvthEN0pgbfnl9cT3JWu9i77BiHRpS0PxnVQ==", "user"=>{"email"=>"Jig@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jig@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (2.9ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/registrations/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 181ms (Views: 35.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:33:04 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (2.8ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-05-28 12:33:10 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0hGhKJ5A61qx4HmGcBr1Q+5rx7XMLKvCy0nlhqRM55HAhkbUm/gVUYXJD1DFNMT7gxN2W7Lrdkfy/6grgeF08A==", "user"=>{"email"=>"Jig@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "jig@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 401 Unauthorized in 144ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:33:10 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (3.0ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-05-28 12:33:16 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:33:16 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (4.9ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for ::1 at 2016-05-28 12:33:19 -0700
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (3.4ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/confirmations/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=BqRa-kqjDq1jPGwi7kST" for ::1 at 2016-05-28 12:33:38 -0700
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"BqRa-kqjDq1jPGwi7kST"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "BqRa-kqjDq1jPGwi7kST"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2016-05-28 19:33:38.807802"], ["updated_at", "2016-05-28 19:33:38.808346"], ["id", 2]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 9ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-28 12:33:38 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (3.4ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-05-28 12:33:45 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ys7lXz0u7WU+G23vFpktBJ4EvNZh2rMtC8W8Mqw/+UnYWQKjOJYTbgoyGzmjtxy883wNOB8dbqgyc/GfiZJqKA==", "user"=>{"email"=>"Jig@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "jig@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-05-28 19:33:46.075149"], ["current_sign_in_at", "2016-05-28 19:33:46.075149"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-05-28 19:33:46.075738"], ["id", 2]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 143ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-05-28 12:33:46 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.1ms)
