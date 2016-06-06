@@ -18,17 +18,20 @@ source 'https://rubygems.org'
  gem 'jquery-rails'
  gem 'turbolinks'
  gem 'bootstrap-sass'
- gem 'bootstrap'
+ #gem 'bootstrap'
  gem 'figaro'
  gem 'pry'
  gem 'devise'
 
  group :development, :test do
    gem 'byebug'
-   gem 'web-console', '~> 2.0'
    gem 'spring'
    gem 'rspec-rails'
    gem 'shoulda'
    gem 'faker'
    gem 'factory_girl_rails'
  end
+ 
+group :development do
+   gem 'web-console', '~> 2.0'
+end
