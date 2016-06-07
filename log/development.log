@@ -10376,3 +10376,458 @@ Processing by WelcomeController#index as HTML
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
   Rendered welcome/index.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160530043303')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160524054052')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "vinyl"], ["body", "Cornhole vinyl xoxo mlkshk gentrify marfa dreamcatcher vice. Chillwave 3 wolf moon vegan williamsburg pour-over. Yuccie cray lo-fi truffaut direct trade godard. Lomo scenester poutine butcher ugh flexitarian salvia. Aesthetic squid messenger bag trust fund."], ["created_at", "2016-06-07 03:00:57.458481"], ["updated_at", "2016-06-07 03:00:57.458481"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "neutra"], ["body", "Narwhal locavore tousled gluten-free portland pug semiotics cliche. Yuccie williamsburg lo-fi swag knausgaard chillwave loko letterpress. Pour-over cred pickled cold-pressed umami. Wolf freegan gentrify poutine."], ["created_at", "2016-06-07 03:00:57.460788"], ["updated_at", "2016-06-07 03:00:57.460788"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "pop-up"], ["body", "Artisan flannel messenger bag etsy polaroid goth loko. Tofu offal disrupt normcore taxidermy slow-carb. Humblebrag raw denim blog iphone viral wolf shoreditch park."], ["created_at", "2016-06-07 03:00:57.462338"], ["updated_at", "2016-06-07 03:00:57.462338"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "marfa"], ["body", "Synth small batch gluten-free readymade offal park 8-bit. Semiotics crucifix tattooed keffiyeh cardigan helvetica fashion axe bespoke. Etsy lomo cardigan art party hella readymade fingerstache gastropub. 3 wolf moon celiac church-key yr mixtape taxidermy. Venmo wes anderson bicycle rights schlitz artisan retro ramps intelligentsia."], ["created_at", "2016-06-07 03:00:57.463870"], ["updated_at", "2016-06-07 03:00:57.463870"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "meggings"], ["body", "Biodiesel squid deep v yolo loko. Skateboard helvetica bitters cold-pressed disrupt +1 small batch kickstarter. Schlitz swag chartreuse retro photo booth gluten-free offal meggings. Pbr&b deep v post-ironic hashtag mustache. Biodiesel leggings listicle."], ["created_at", "2016-06-07 03:00:57.465419"], ["updated_at", "2016-06-07 03:00:57.465419"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "meggings"], ["body", "Godard put a bird on it normcore echo single-origin coffee actually neutra. Organic put a bird on it cray semiotics cronut distillery. Farm-to-table 8-bit tote bag hammock shabby chic bitters goth. Banjo paleo readymade chia selvage quinoa xoxo keffiyeh."], ["created_at", "2016-06-07 03:00:57.467250"], ["updated_at", "2016-06-07 03:00:57.467250"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "marfa"], ["body", "Sustainable brunch disrupt green juice leggings occupy pabst shoreditch. Godard direct trade normcore humblebrag schlitz mixtape. Stumptown brooklyn actually. Cornhole kickstarter sriracha lo-fi. Tumblr hammock chambray cornhole synth yuccie helvetica."], ["created_at", "2016-06-07 03:00:57.468926"], ["updated_at", "2016-06-07 03:00:57.468926"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "goth"], ["body", "Craft beer meggings hoodie listicle 8-bit plaid. 90's tofu semiotics loko cronut. Bushwick echo fap listicle scenester post-ironic gentrify hella."], ["created_at", "2016-06-07 03:00:57.470600"], ["updated_at", "2016-06-07 03:00:57.470600"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "squid"], ["body", "Knausgaard 90's cold-pressed salvia offal small batch cronut. Typewriter heirloom master echo kogi yolo austin. Forage mlkshk hammock."], ["created_at", "2016-06-07 03:00:57.472168"], ["updated_at", "2016-06-07 03:00:57.472168"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "venmo"], ["body", "Retro knausgaard readymade synth. Pinterest lo-fi quinoa tumblr salvia. Tumblr pork belly swag kombucha fanny pack food truck. Meh austin vegan wayfarers distillery organic farm-to-table."], ["created_at", "2016-06-07 03:00:57.473839"], ["updated_at", "2016-06-07 03:00:57.473839"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "butcher"], ["body", "Celiac loko jean shorts sriracha ramps lo-fi. Vinyl pop-up chicharrones. 8-bit +1 mixtape keytar trust fund leggings pitchfork."], ["created_at", "2016-06-07 03:00:57.475330"], ["updated_at", "2016-06-07 03:00:57.475330"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "pabst"], ["body", "Letterpress truffaut five dollar toast messenger bag food truck semiotics cray salvia. Tumblr cronut lo-fi photo booth everyday stumptown hammock. Wes anderson mixtape hella heirloom literally occupy next level. Brooklyn ennui drinking lomo disrupt put a bird on it wayfarers gastropub."], ["created_at", "2016-06-07 03:00:57.476891"], ["updated_at", "2016-06-07 03:00:57.476891"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "semiotics"], ["body", "Wolf waistcoat pug lumbersexual. Drinking vhs pop-up mumblecore twee. 8-bit pbr&b dreamcatcher carry church-key cold-pressed. Venmo dreamcatcher thundercats normcore freegan mixtape helvetica. Heirloom pitchfork knausgaard."], ["created_at", "2016-06-07 03:00:57.478594"], ["updated_at", "2016-06-07 03:00:57.478594"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "taxidermy"], ["body", "Cronut ethical keffiyeh photo booth. Salvia gastropub trust fund. Leggings pour-over bitters. Pitchfork humblebrag +1 loko."], ["created_at", "2016-06-07 03:00:57.480100"], ["updated_at", "2016-06-07 03:00:57.480100"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "tilde"], ["body", "Kale chips tousled tofu mumblecore neutra goth lumbersexual twee. Echo kogi migas hammock. Yolo sartorial ramps fixie tote bag next level. 90's skateboard chambray loko."], ["created_at", "2016-06-07 03:00:57.481583"], ["updated_at", "2016-06-07 03:00:57.481583"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "umami"], ["body", "Microdosing offal pork belly polaroid actually. Yr wayfarers irony umami seitan cred. Artisan plaid vegan keytar. Organic locavore gluten-free goth bushwick. 90's bespoke before they sold out keffiyeh gentrify cray."], ["created_at", "2016-06-07 03:00:57.483281"], ["updated_at", "2016-06-07 03:00:57.483281"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "pour-over"], ["body", "Aesthetic bushwick actually retro 8-bit hella. Salvia chicharrones kogi wes anderson tacos mlkshk godard roof. Pitchfork polaroid +1 actually vinyl thundercats."], ["created_at", "2016-06-07 03:00:57.484961"], ["updated_at", "2016-06-07 03:00:57.484961"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "kinfolk"], ["body", "Carry dreamcatcher try-hard quinoa tumblr etsy messenger bag blog. 90's migas yr raw denim heirloom. Drinking tilde truffaut forage asymmetrical flexitarian."], ["created_at", "2016-06-07 03:00:57.486601"], ["updated_at", "2016-06-07 03:00:57.486601"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "authentic"], ["body", "Kinfolk tattooed authentic slow-carb wolf gentrify. Poutine quinoa mlkshk etsy. Cliche leggings umami vhs brooklyn trust fund biodiesel. Twee bitters irony etsy pabst pour-over."], ["created_at", "2016-06-07 03:00:57.488438"], ["updated_at", "2016-06-07 03:00:57.488438"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "8-bit"], ["body", "Street knausgaard direct trade bicycle rights yolo. Roof squid cred goth 3 wolf moon godard cray. Biodiesel heirloom thundercats goth meditation freegan meh."], ["created_at", "2016-06-07 03:00:57.490479"], ["updated_at", "2016-06-07 03:00:57.490479"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "umami"], ["body", "Iphone sartorial heirloom intelligentsia. Drinking small batch kitsch pour-over mumblecore banh mi kickstarter. Locavore asymmetrical venmo crucifix pug bushwick master church-key. Helvetica cliche austin wayfarers selvage messenger bag occupy forage. Celiac stumptown intelligentsia."], ["created_at", "2016-06-07 03:00:57.492116"], ["updated_at", "2016-06-07 03:00:57.492116"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "XOXO"], ["body", "Aesthetic polaroid letterpress tattooed. Food truck biodiesel you probably haven't heard of them tousled distillery pitchfork. Chambray flannel paleo cardigan offal. Microdosing truffaut green juice vinyl trust fund jean shorts asymmetrical. Kickstarter semiotics whatever next level vegan freegan aesthetic."], ["created_at", "2016-06-07 03:00:57.493711"], ["updated_at", "2016-06-07 03:00:57.493711"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "mlkshk"], ["body", "Lo-fi blog craft beer ugh artisan. Paleo knausgaard xoxo street blog. Vinegar cliche hashtag biodiesel. Roof try-hard cray."], ["created_at", "2016-06-07 03:00:57.495491"], ["updated_at", "2016-06-07 03:00:57.495491"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "occupy"], ["body", "Health art party pug cold-pressed banjo organic cred try-hard. Cred pickled fixie biodiesel bitters. Church-key goth umami. Tote bag brooklyn keytar semiotics chicharrones cred bushwick."], ["created_at", "2016-06-07 03:00:57.497101"], ["updated_at", "2016-06-07 03:00:57.497101"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "semiotics"], ["body", "Brunch dreamcatcher celiac vegan 3 wolf moon try-hard 90's. Whatever pickled sriracha trust fund kogi helvetica. Chillwave hammock vegan hashtag tofu pour-over knausgaard post-ironic. Farm-to-table kitsch cold-pressed chambray normcore drinking. Poutine yolo forage post-ironic."], ["created_at", "2016-06-07 03:00:57.499908"], ["updated_at", "2016-06-07 03:00:57.499908"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "tousled"], ["body", "Gastropub hashtag before they sold out narwhal. Seitan goth mustache art party hashtag heirloom helvetica sriracha. Direct trade marfa five dollar toast brunch cray butcher tote bag. Sustainable pbr&b godard carry swag lumbersexual taxidermy."], ["created_at", "2016-06-07 03:00:57.502504"], ["updated_at", "2016-06-07 03:00:57.502504"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "twee"], ["body", "Wayfarers slow-carb deep v godard pickled. Vhs blog church-key helvetica semiotics neutra banh mi. Distillery keffiyeh marfa try-hard blue bottle asymmetrical. Wes anderson keffiyeh cred chillwave mumblecore wayfarers ugh loko."], ["created_at", "2016-06-07 03:00:57.506263"], ["updated_at", "2016-06-07 03:00:57.506263"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "vinegar"], ["body", "Actually cronut umami pickled raw denim. Gentrify franzen small batch. Brooklyn kitsch selvage cold-pressed +1 cardigan mustache blog. Celiac viral bushwick."], ["created_at", "2016-06-07 03:00:57.508739"], ["updated_at", "2016-06-07 03:00:57.508739"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "heirloom"], ["body", "Art party you probably haven't heard of them lomo hammock squid. Locavore yr twee. Lumbersexual everyday sartorial chartreuse pork belly flexitarian. Before they sold out hashtag artisan literally. Messenger bag kinfolk photo booth locavore sartorial poutine."], ["created_at", "2016-06-07 03:00:57.510431"], ["updated_at", "2016-06-07 03:00:57.510431"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "wayfarers"], ["body", "Park brunch goth master locavore trust fund. Venmo sartorial photo booth freegan. Blog neutra try-hard yr."], ["created_at", "2016-06-07 03:00:57.512672"], ["updated_at", "2016-06-07 03:00:57.512672"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "pour-over"], ["body", "Normcore art party yr. Marfa tote bag pop-up schlitz vegan fixie locavore. Readymade truffaut etsy disrupt ugh chillwave. Health meggings master selvage occupy. Fap gluten-free post-ironic blog retro."], ["created_at", "2016-06-07 03:00:57.514364"], ["updated_at", "2016-06-07 03:00:57.514364"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "leggings"], ["body", "Cliche mixtape park portland. Intelligentsia green juice pabst polaroid. Portland normcore pabst blog intelligentsia wayfarers ramps +1. Sriracha pug meh selfies gluten-free. Truffaut pabst tumblr typewriter blog forage hashtag."], ["created_at", "2016-06-07 03:00:57.515923"], ["updated_at", "2016-06-07 03:00:57.515923"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "twee"], ["body", "Truffaut carry whatever intelligentsia helvetica health organic actually. Chartreuse fanny pack yolo seitan. Ugh kombucha fingerstache. Food truck vegan tattooed wolf selfies pinterest."], ["created_at", "2016-06-07 03:00:57.517549"], ["updated_at", "2016-06-07 03:00:57.517549"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "kinfolk"], ["body", "Migas food truck cold-pressed cleanse. Dreamcatcher kickstarter vice kombucha lumbersexual food truck everyday. Viral authentic gastropub echo."], ["created_at", "2016-06-07 03:00:57.519253"], ["updated_at", "2016-06-07 03:00:57.519253"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "wayfarers"], ["body", "Slow-carb church-key keffiyeh meditation. Keytar health church-key humblebrag chillwave fap pbr&b stumptown. Fanny pack mumblecore messenger bag master sustainable bitters knausgaard. Street brunch cray cronut pabst neutra. Keffiyeh bespoke everyday."], ["created_at", "2016-06-07 03:00:57.520787"], ["updated_at", "2016-06-07 03:00:57.520787"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "post-ironic"], ["body", "Lo-fi authentic mustache street waistcoat crucifix cleanse. Distillery celiac banh mi yolo selfies. Tacos flexitarian occupy next level banh mi carry. Tacos neutra cold-pressed authentic cray. Leggings pop-up fashion axe."], ["created_at", "2016-06-07 03:00:57.522368"], ["updated_at", "2016-06-07 03:00:57.522368"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "celiac"], ["body", "Kitsch yuccie irony slow-carb microdosing forage banjo. Mumblecore neutra health mustache. Swag park typewriter loko bespoke 8-bit echo. Before they sold out tousled next level. Locavore green juice lumbersexual."], ["created_at", "2016-06-07 03:00:57.523922"], ["updated_at", "2016-06-07 03:00:57.523922"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "wayfarers"], ["body", "Selfies cred tote bag tumblr gluten-free wayfarers. Ramps tilde mumblecore quinoa kombucha. Squid drinking seitan health."], ["created_at", "2016-06-07 03:00:57.525461"], ["updated_at", "2016-06-07 03:00:57.525461"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "pug"], ["body", "Semiotics actually tacos jean shorts roof. Truffaut forage distillery letterpress sartorial banh mi. Fingerstache pour-over literally fanny pack typewriter. Letterpress fap try-hard. Typewriter mustache raw denim gluten-free pug literally forage."], ["created_at", "2016-06-07 03:00:57.526963"], ["updated_at", "2016-06-07 03:00:57.526963"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "semiotics"], ["body", "Sriracha asymmetrical shabby chic ugh. Disrupt flexitarian paleo leggings. Banh mi sartorial try-hard schlitz swag brunch brooklyn church-key."], ["created_at", "2016-06-07 03:00:57.528776"], ["updated_at", "2016-06-07 03:00:57.528776"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "VHS"], ["body", "Goth photo booth ethical hoodie 8-bit tote bag wayfarers. Goth vice mumblecore lomo tattooed chillwave leggings. Selvage cliche listicle yolo slow-carb. Umami stumptown crucifix waistcoat literally keytar gentrify."], ["created_at", "2016-06-07 03:00:57.530594"], ["updated_at", "2016-06-07 03:00:57.530594"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "hoodie"], ["body", "Five dollar toast flexitarian slow-carb try-hard selvage. Photo booth mustache irony truffaut kitsch ethical salvia five dollar toast. Heirloom kombucha neutra taxidermy mustache ramps. Kitsch readymade bicycle rights."], ["created_at", "2016-06-07 03:00:57.532264"], ["updated_at", "2016-06-07 03:00:57.532264"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "shoreditch"], ["body", "Park craft beer normcore iphone migas bitters vhs. Keytar pbr&b ennui single-origin coffee authentic bitters vinyl. Blue bottle 3 wolf moon chambray mustache. Lo-fi letterpress tacos fanny pack you probably haven't heard of them cronut semiotics. Celiac umami cronut goth before they sold out."], ["created_at", "2016-06-07 03:00:57.534177"], ["updated_at", "2016-06-07 03:00:57.534177"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "cliche"], ["body", "Migas yuccie loko. Schlitz hella chartreuse cliche. Hammock keytar hashtag plaid."], ["created_at", "2016-06-07 03:00:57.536104"], ["updated_at", "2016-06-07 03:00:57.536104"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "humblebrag"], ["body", "Gluten-free shoreditch tumblr semiotics. Tacos lomo ramps tousled thundercats. Artisan cray vice flannel retro."], ["created_at", "2016-06-07 03:00:57.537830"], ["updated_at", "2016-06-07 03:00:57.537830"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "austin"], ["body", "Fanny pack keytar hoodie ennui cliche. Wayfarers street vegan. Tumblr wolf marfa swag cleanse franzen jean shorts chicharrones. Venmo craft beer quinoa."], ["created_at", "2016-06-07 03:00:57.539388"], ["updated_at", "2016-06-07 03:00:57.539388"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "readymade"], ["body", "Pinterest food truck bicycle rights salvia put a bird on it. Poutine seitan mumblecore church-key gastropub blue bottle williamsburg shabby chic. Hella taxidermy irony crucifix. Bushwick fap taxidermy. Tattooed tote bag fingerstache messenger bag."], ["created_at", "2016-06-07 03:00:57.541017"], ["updated_at", "2016-06-07 03:00:57.541017"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "ugh"], ["body", "Gastropub ramps poutine tousled tofu. Asymmetrical swag cred kogi chicharrones vhs tumblr. Lo-fi kogi schlitz trust fund try-hard 90's pug aesthetic."], ["created_at", "2016-06-07 03:00:57.542684"], ["updated_at", "2016-06-07 03:00:57.542684"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "heirloom"], ["body", "Hashtag cold-pressed crucifix portland pickled. Vinyl hoodie gastropub poutine chicharrones next level. Church-key photo booth tacos vhs letterpress synth chicharrones. Cleanse godard kitsch tacos."], ["created_at", "2016-06-07 03:00:57.544351"], ["updated_at", "2016-06-07 03:00:57.544351"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "biodiesel"], ["body", "Neutra pickled yr cray vhs letterpress. Yuccie cray roof banh mi distillery wes anderson pabst. Park bicycle rights knausgaard. Ugh tote bag synth readymade. Normcore tousled before they sold out wes anderson actually tacos."], ["created_at", "2016-06-07 03:00:57.546122"], ["updated_at", "2016-06-07 03:00:57.546122"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "wikis"
+
+
+Started GET "/" for ::1 at 2016-06-06 20:01:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 401 Unauthorized in 37ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-06 20:01:11 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (7.0ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 316ms (Views: 306.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-06-06 20:01:23 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pSS+BV2NfcluiDpYyNybQLFDM7E1fe4w5/nw3meBfwV84kAFppwG3ET8Ofnk/56ulg4dedW3tLNkFCcL9EfbMw==", "user"=>{"email"=>"jaja@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "jaja@gmail.com"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pSS+BV2NfcluiDpYyNybQLFDM7E1fe4w5/nw3meBfwV84kAFppwG3ET8Ofnk/56ulg4dedW3tLNkFCcL9EfbMw==", "user"=>{"email"=>"jaja@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (3.2ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 191ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-06-06 20:01:32 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (4.2ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/registrations/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 62ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-06-06 20:01:38 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"37s8kJGy10LmjKghwprIvulw4afE2bIz7RSU3RL+MwsGfcKQaqOsV8z4q4Duuc1Qzj3PbyQT6LBu+UMIgTiXPQ==", "user"=>{"email"=>"jparekh117@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jparekh117@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "jparekh117@gmail.com"], ["encrypted_password", "$2a$11$hjBKrPtOaBjSVle9oZ/0YuCdxg4wE2roeJq/7V18riQNahS69EELW"], ["created_at", "2016-06-07 03:01:39.105812"], ["updated_at", "2016-06-07 03:01:39.105812"], ["confirmation_token", "SRPrkedsy6vNhy1xM86V"], ["confirmation_sent_at", "2016-06-07 03:01:39.106106"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/mailer/confirmation_instructions.html.erb (2.9ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 243.0ms
+
+Sent mail to jparekh117@gmail.com (1304.2ms)
+Date: Mon, 06 Jun 2016 20:01:39 -0700
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: jparekh117@gmail.com
+Message-ID: <57563913593f0_31223ffae321bba086ba@Jigeshs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome jparekh117@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=SRPrkedsy6vNhy1xM86V">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1731ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-06-06 20:01:40 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-06 20:01:40 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (3.3ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=SRPrkedsy6vNhy1xM86V" for ::1 at 2016-06-06 20:01:54 -0700
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"SRPrkedsy6vNhy1xM86V"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "SRPrkedsy6vNhy1xM86V"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["confirmed_at", "2016-06-07 03:01:54.433478"], ["updated_at", "2016-06-07 03:01:54.433852"], ["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-06 20:01:54 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (4.9ms)
+  Rendered /Users/JetLifeJig/.rvm/gems/ruby-2.2.1/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-06-06 20:02:02 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5CWBj+lfZCNDaDQcYN+voVmUXZs7A/nUPLKm0SHO1m2VmgGxLQGhad5o3FdoHtQoit/vowmVWTTHx1O10Gfbw==", "user"=>{"email"=>"jparekh117@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "jparekh117@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-06-07 03:02:02.284660"], ["current_sign_in_at", "2016-06-07 03:02:02.284660"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-06-07 03:02:02.285320"], ["id", 1]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 152ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2016-06-06 20:02:02 -0700
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wikis" for ::1 at 2016-06-06 20:02:03 -0700
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mWiki Load (0.5ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 41ms (Views: 35.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/3" for ::1 at 2016-06-06 20:02:10 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered wikis/show.html.erb within layouts/application (6.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 50ms (Views: 46.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/1" for ::1 at 2016-06-06 20:02:19 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered wikis/show.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis/25" for ::1 at 2016-06-06 20:02:28 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered wikis/show.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis/25/edit.25" for ::1 at 2016-06-06 20:02:47 -0700
+Processing by WikisController#edit as 
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mWiki Load (0.0ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered wikis/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/wikis/25" for ::1 at 2016-06-06 20:02:53 -0700
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XY8jc2NZaR0Y6iAu2JlY2rhqr3pih4poESOj/P5ZpInuDJWSdEj9+ey/+CE0VBBuln4f76I00AhpnZ9ka1dICw==", "wiki"=>{"title"=>"semiotics", "body"=>"Brunch dreamcatcher celiac vegan 3 wolf moon try-hard 90's. Whatever pickled sriracha trust fund kogi helvetica. Chillwave hammock vegan hashtag tofu pour-over knausgaard post-ironic. Farm-to-table kitsch cold-pressed chambray normcore drinking. Poutine yolo forage post-ironic. TOTALLY HIPSTER"}, "commit"=>"Update", "id"=>"25"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mWiki Load (0.0ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "wikis" SET "body" = ?, "updated_at" = ? WHERE "wikis"."id" = ?  [["body", "Brunch dreamcatcher celiac vegan 3 wolf moon try-hard 90's. Whatever pickled sriracha trust fund kogi helvetica. Chillwave hammock vegan hashtag tofu pour-over knausgaard post-ironic. Farm-to-table kitsch cold-pressed chambray normcore drinking. Poutine yolo forage post-ironic. TOTALLY HIPSTER"], ["updated_at", "2016-06-07 03:02:53.809206"], ["id", 25]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/25
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/wikis/25" for ::1 at 2016-06-06 20:02:53 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mWiki Load (0.2ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered wikis/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis" for ::1 at 2016-06-06 20:02:58 -0700
+Processing by WikisController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/13" for ::1 at 2016-06-06 20:03:00 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 13]]
+  Rendered wikis/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis" for ::1 at 2016-06-06 20:03:05 -0700
+Processing by WikisController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWiki Load (0.4ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/13" for ::1 at 2016-06-06 20:03:08 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 13]]
+  Rendered wikis/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis" for ::1 at 2016-06-06 20:03:12 -0700
+Processing by WikisController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/3" for ::1 at 2016-06-06 20:03:13 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered wikis/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis/3/edit.3" for ::1 at 2016-06-06 20:03:14 -0700
+Processing by WikisController#edit as 
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWiki Load (0.0ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered wikis/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/wikis/3" for ::1 at 2016-06-06 20:03:19 -0700
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TvVq2tq3KXOL0DwsGzSuL7dUH5v6qtB9mZz58Tw7ZC/9dtw7zaa9l3+F5CP3+eabmUCvDjoZih3hIsVpqTWIrQ==", "wiki"=>{"title"=>"pop-up", "body"=>"Artisan flannel messenger bag etsy polaroid goth loko. Tofu offal disrupt normcore taxidermy slow-carb. Humblebrag raw denim blog iphone viral wolf shoreditch park. TEST DATA"}, "commit"=>"Update", "id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "wikis" SET "body" = ?, "updated_at" = ? WHERE "wikis"."id" = ?[0m  [["body", "Artisan flannel messenger bag etsy polaroid goth loko. Tofu offal disrupt normcore taxidermy slow-carb. Humblebrag raw denim blog iphone viral wolf shoreditch park. TEST DATA"], ["updated_at", "2016-06-07 03:03:19.506912"], ["id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/wikis/3
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/wikis/3" for ::1 at 2016-06-06 20:03:19 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered wikis/show.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis" for ::1 at 2016-06-06 20:03:23 -0700
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mWiki Load (0.2ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/3" for ::1 at 2016-06-06 20:03:24 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered wikis/show.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-06-06 20:03:27 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.1ms)
