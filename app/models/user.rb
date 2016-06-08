@@ -5,10 +5,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  #before_action :authenticate_user!
-  #user_signed_in?
-  #current_user
-  #user_session
-
-
+  enum role: [:standard, :admin, :premium]
+  after_initialize :default_role
+  
+  def default_role
+  	self.role ||= :standard
+  end
+  
 end
