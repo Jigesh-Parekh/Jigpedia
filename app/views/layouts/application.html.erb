@@ -14,11 +14,17 @@
        <li><%= link_to "Jigipedia", welcome_index_path %></li>
        <li><%= link_to "Wikis", wikis_path %></li>
        <li><%= link_to "About", welcome_about_path %></li>
+       <% if user_signed_in? && current_user.standard? %>
+       <li><%= link_to "Upgrade Account", charge_charges_path, method: :post %></li>
+       <% elsif user_signed_in? && current_user.premium?  %>
+       <li><%= link_to "Downgrade Account", downgrade_charges_path, method: :post %></li>
+       <% end %>
 
          <div class="pull-right">
            <% if user_signed_in? %>
               Signed in as: <strong><%= current_user.email %></strong> |
               <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+
           <% else %>
               <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
               <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
