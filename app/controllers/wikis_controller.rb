@@ -2,7 +2,7 @@ class WikisController < ApplicationController
   before_action :authenticate_user!, except: :show
 
   def index
-    @wikis = Wiki.all
+    @wikis = Wiki.visible_to(current_user)
   end
 
   def show
@@ -63,4 +63,12 @@ class WikisController < ApplicationController
   def wiki_params
     params.require(:wiki).permit(:title, :body)
   end
+
+  def authorize_user
+      unless current_user.admin? || current_user.premium?
+          flash[:alert] = "You must have upgraded privlidges to do that. please upgrade your account."
+          redirect_to wikis_path
+      end
+  end
+
 end
