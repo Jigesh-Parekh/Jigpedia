@@ -14,12 +14,21 @@
           <%= f.text_area :body, class:"form-control" %>
         </div>
       </div>
-        <%= f.submit "Save", class:"btn btn-success pull-right" %>
-    </div>
+        
+  
     <!-- /.container -->
- <% end %>
+ 
 
+    <% if current_user.admin? || current_user.premium? %>
+      <div class="form-group">
+        <%= f.label :private, class: 'checkbox' do %>
+          <%= f.check_box :private %> Private wiki
+        <% end %>
+      </div>
 
-
+    <% end %>
+  <%= f.submit "Save", class:"btn btn-success pull-right" %>
+  </div>
+<% end %>
 
 
