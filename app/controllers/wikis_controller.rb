@@ -7,6 +7,11 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.find(params[:id])
+
+      if @wiki.private = true && current_user.standard? #tried multiple forms of logic, either all wikis viewable or none are, suspect db issue as well 
+       flash[:alert] = "You must be Upgraded in to view private topics."
+       redirect_to wikis_path
+     end
   end
 
   def new
@@ -19,8 +24,8 @@ class WikisController < ApplicationController
 
   def create
      @wiki = Wiki.new(wiki_params)
-     #@wiki.title = params[:wiki][:title]
-     #@wiki.body = params[:wiki][:body]
+     @wiki.user = current_user
+
 
 
      if @wiki.save
@@ -61,7 +66,7 @@ class WikisController < ApplicationController
 
   private
   def wiki_params
-    params.require(:wiki).permit(:title, :body)
+    params.require(:wiki).permit(:title, :body, :private)
   end
 
   def authorize_user
