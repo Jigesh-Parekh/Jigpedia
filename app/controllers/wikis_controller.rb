@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
   before_action :authenticate_user!, except: :show
-  #@wiki.current_user = current_user
+
   def index
     @wikis = Wiki.visible_to(current_user)
   end
@@ -24,8 +24,8 @@ class WikisController < ApplicationController
 
   def create
      @wiki = Wiki.new(wiki_params)
-     #@wiki.title = params[:wiki][:title]
-     #@wiki.body = params[:wiki][:body]
+     @wiki.user = current_user
+
 
 
      if @wiki.save
