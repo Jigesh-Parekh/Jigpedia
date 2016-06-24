@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
- 
+  has_many :wikis
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -20,6 +20,12 @@ class User < ActiveRecord::Base
   def downgrade
   	self.role = :standard
   	self.save
+
+    wikis.each do |wiki|
+      wiki.private = false
+      wiki.save
+    end
+
   end
 
 end

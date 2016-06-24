@@ -1,6 +1,7 @@
 class WikisController < ApplicationController
   before_action :authenticate_user!, except: :show
 
+
   def index
     @wikis = Wiki.visible_to(current_user)
   end
@@ -8,7 +9,7 @@ class WikisController < ApplicationController
   def show
     @wiki = Wiki.find(params[:id])
 
-      if @wiki.private = true && current_user.standard? #tried multiple forms of logic, either all wikis viewable or none are, suspect db issue as well 
+      if @wiki.private == true && current_user.standard? #tried multiple forms of logic, either all wikis viewable or none are, suspect db issue as well 
        flash[:alert] = "You must be Upgraded in to view private topics."
        redirect_to wikis_path
      end
