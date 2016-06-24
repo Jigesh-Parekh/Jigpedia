@@ -16,6 +16,7 @@ class Wiki < ActiveRecord::Base
  				where("(private = ?) OR ((private = ?) AND (user_id = ?))", false, true, user.id)
  		elsif user.standard?
  				where(private: false)
+ 				#where("(private = ?) OR ((private = ?) AND (user_id = ?))", false, false, user.id)
  		end
   end
 end
