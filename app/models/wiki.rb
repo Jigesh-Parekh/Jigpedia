@@ -1,5 +1,7 @@
 class Wiki < ActiveRecord::Base
   belongs_to :user
+  has_many :collaberators
+  has_many :users, through: :collaberators
   
   before_create { self.private = self.private || false; true}
 

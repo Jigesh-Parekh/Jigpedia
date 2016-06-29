@@ -6,7 +6,10 @@ Rails.application.routes.draw do
       post :downgrade
     end
   end
-  resources :wikis
+  resources :wikis do
+    resources :collaberators, only: [:index, :destroy, :create]
+    #wiki id needed for collaborators - nest inside wiki? 
+  end
   devise_for :users
   get 'welcome/index'
 
