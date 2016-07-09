@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   resources :charges, only: [:new] do 
     collection do 
       post :charge 
@@ -7,8 +8,12 @@ Rails.application.routes.draw do
     end
   end
   resources :wikis do
-    resources :collaberators, only: [:index, :destroy, :create]
+    #resources :collaborators, only: [:index, :destroy, :create]
     #wiki id needed for collaborators - nest inside wiki? 
+    member do
+      post :add_collaborator 
+      delete :remove_collaborator
+    end
   end
   devise_for :users
   get 'welcome/index'

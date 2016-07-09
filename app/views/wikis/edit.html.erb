@@ -17,6 +17,23 @@
      <%= f.submit "Update", class:"btn btn-success pull-right" %>
 
      <%= link_to "Cancel and Return to Wiki", wikis_path, :class => 'btn btn-link pull-left'  %>
-    
+      
     </div>
+    <div class="container">
+      <p>Collaborators</p>
+      <% collaboration_user_ids = @wiki.collaborators %>
+      <% User.all.each do |user| %>
+        <div class="user">
+          <%= check_box_tag "wiki[collaboration_user_ids][]", user.id, collaboration_user_ids.include?(user.id) %>
+          <%= user.email %> 
+        </div>
+      <% end %>
+    </div>
+
+  <div class="container">
+      <% if @wiki.creator == current_user || current_user.admin? %>
+        <%= link_to "add collaborators", add_collaborator_wiki_path(@wiki), method: :post, class: "btn btn-info btn-md" %>
+      <% end %>
+  </div> 
+
  <% end %> 

@@ -1,7 +1,8 @@
 class Wiki < ActiveRecord::Base
-  belongs_to :user
-  has_many :collaberators
-  has_many :users, through: :collaberators
+  belongs_to :creator, class_name: "User", foreign_key: :user_id
+  #pretend its a user but call it creator
+  has_many :collaborations
+  has_many :collaborators, through: :collaborations, source: :user
   
   before_create { self.private = self.private || false; true}
 

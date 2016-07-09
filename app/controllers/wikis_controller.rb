@@ -1,4 +1,5 @@
 class WikisController < ApplicationController
+  #before_action :setter_wiki, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: :show
 
 
@@ -25,7 +26,7 @@ class WikisController < ApplicationController
 
   def create
      @wiki = Wiki.new(wiki_params)
-     @wiki.user = current_user
+     @wiki.creator = current_user
 
 
 
@@ -64,11 +65,40 @@ class WikisController < ApplicationController
     end
   end
   
+  def add_collaborator
+    #@collaborator = Collaborator.new(params[:id])
+    #@wiki = Wiki.find(params[:id])
+    #if @wiki.save
+    #  @wiki.collaborators = Collaborator.update_collaborators(params[:user][:collaborators])
+    #  flash[:alert] = "Collaborator saved"
+    #else  
+    #  flash[:alert] = "Collaborator not saved, error -  please try again"
+    #end
+    @wiki = Wiki.find(params[:id])
+    userc = User.find_by(email: params[:email])
+    @wiki.collaborators << userc
+
+    redirect_to wikis_path
+  end  
+
+  def remove_collaborator
+    @collaborator = Collaborator.find(params[:id])
+
+    if @collaborator.destroy
+      flash[:alert] = "Collaborator Removed"
+    else  
+      pass
+    end
+
+    redirect_to edit_wiki_path
+  end  
 
   private
   def wiki_params
     params.require(:wiki).permit(:title, :body, :private)
   end
+
+
 
   def authorize_user
       unless current_user.admin? || current_user.premium?

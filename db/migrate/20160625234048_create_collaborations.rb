@@ -1,6 +1,6 @@
-class CreateCollaborators < ActiveRecord::Migration
+class CreateCollaborations < ActiveRecord::Migration
   def change
-    create_table :collaborators do |t|
+    create_table :collaborations do |t|
     	t.references :user, index: true, foreign_key: true
     	t.references :wiki, index: true, foreign_key: true
     	t.timestamp null: false
