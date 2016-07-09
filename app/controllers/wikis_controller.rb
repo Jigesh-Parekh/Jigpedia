@@ -75,7 +75,7 @@ class WikisController < ApplicationController
     #  flash[:alert] = "Collaborator not saved, error -  please try again"
     #end
     @wiki = Wiki.find(params[:id])
-    userc = User.find_by(email: params[:email])
+    userc = User.find_by(email: params[:collaborator_email])
     @wiki.collaborators << userc
 
     redirect_to wikis_path

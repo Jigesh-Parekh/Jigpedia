@@ -1,9 +1,9 @@
 <h4>Add a collaborator</h4>
 <% @users.each do |user| %>
-	<%= form_for[wiki, collaborator] do |f| %>
+	<%= form_for(@wiki) do |f| %>
 		 <% if @wiki.creator == current_user || current_user.admin? %>
 			 <div class="form-group">
-			  <%= f.text_area :email, class:"form-control" %>
+			  <%= f.email_field :collaborator_email %>
 			 </div
 
 			 <%= f.submit "Submit Collaborator", class: 'btn btn-default pull-right' %>
