@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     #wiki id needed for collaborators - nest inside wiki? 
     member do
       post :add_collaborator 
-      delete :remove_collaborator
+      delete '/remove_collaborator/:user_id', to: 'wikis#remove_collaborator', as: :remove_collaborator
     end
   end
   devise_for :users

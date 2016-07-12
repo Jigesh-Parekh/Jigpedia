@@ -75,22 +75,23 @@ class WikisController < ApplicationController
     #  flash[:alert] = "Collaborator not saved, error -  please try again"
     #end
     @wiki = Wiki.find(params[:id])
-    userc = User.find_by(email: params[:collaborator][:email])
-      if @wiki.collaborators.include?(userc)
+    @user = User.find_by(email: params[:collaborator][:email])
+      if @wiki.collaborators.include?(@user)
         flash[:alert] = "That user is already a collaborator."
-      elsif userc.nil?
+      elsif @user.nil?
         flash[:alert] = "this user does not exist"
       else
-        @wiki.collaborators << userc
+        @wiki.collaborators << @user
       end
     redirect_to edit_wiki_path(@wiki)
   end  
 
   def remove_collaborator
    @wiki = Wiki.find(params[:id])
-   @user = User.find_by(params[:id])
-   
-     if @wiki.collaborators.destroy(@user)
+   collaboration = Collaboration.find_by(wiki_id: params[:id], user_id: params[:user_id])
+
+
+     if collaboration.destroy
       flash[:notice] = "Collab Deleted"
       redirect_to edit_wiki_path(@wiki)
      else
