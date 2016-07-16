@@ -20,7 +20,7 @@ class WikisController < ApplicationController
   def edit
     @wiki = Wiki.find(params[:id])
     @collabwiki = current_user.collaborating_wikis
-
+    @user = User.find_by(params[:user_id]) #_by(email: params[:collaborator][:email]))
 
   end
 
