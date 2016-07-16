@@ -15,11 +15,11 @@ class Wiki < ActiveRecord::Base
 	
  		if user.admin?
  				all
- 		elsif user.premium? 		
+ 		elsif user.premium? 
  				where("(private = ?) OR ((private = ?) AND (user_id = ?))", false, true, user.id)
  		elsif user.standard?
  				where(private: false)
- 				#where("(private = ?) OR ((private = ?) AND (user_id = ?))", false, false, user.id)
  		end
   end
+
 end
