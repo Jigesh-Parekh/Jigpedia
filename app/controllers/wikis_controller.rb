@@ -6,15 +6,11 @@ class WikisController < ApplicationController
   def index
     @wikis = Wiki.visible_to(current_user)
     @collabwiki = current_user.collaborating_wikis
+
   end
 
   def show
     @wiki = Wiki.find(params[:id])
-
-      if @wiki.private == true && current_user.standard? #tried multiple forms of logic, either all wikis viewable or none are, suspect db issue as well 
-       flash[:alert] = "You must be Upgraded in to view private topics."
-       redirect_to wikis_path
-     end
   end
 
   def new
@@ -23,6 +19,9 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @collabwiki = current_user.collaborating_wikis
+
+
   end
 
   def create
