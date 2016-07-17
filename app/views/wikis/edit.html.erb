@@ -17,6 +17,30 @@
      <%= f.submit "Update", class:"btn btn-success pull-right" %>
 
      <%= link_to "Cancel and Return to Wiki", wikis_path, :class => 'btn btn-link pull-left'  %>
-    
-    </div>
- <% end %> 
+  </div> 
+ <% end %>
+
+<% if @user.premium? || @user.admin? %> 
+    <% if @wiki.private %> 
+        <%= form_for :collaborator, url: add_collaborator_wiki_path(@wiki) do |f| %>   
+          <div class= "container">
+            <h2> Add Collaborator </h2>
+            <div class= "form-group"> 
+              <%= f.email_field :email %>
+              <%= f.submit %> 
+            </div>
+          </div>
+        <% end %> 
+          
+        <div class= "container">
+          <h2> Collaborators List </h2>
+            <div class= "form-group"> 
+              <% @wiki.collaborators.each do |user| %> 
+                <%= user.email %> 
+                <%= link_to "Remove from Collab", remove_collaborator_wiki_path(@wiki, user), method: :delete, :class =>"btn btn-danger" %>
+                </br>
+              <% end %> 
+            </div>
+        </div>
+   <% end %>
+<% end %>

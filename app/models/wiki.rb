@@ -1,5 +1,8 @@
 class Wiki < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :creator, class_name: "User", foreign_key: :user_id
+  #pretend its a user but call it creator
+  has_many :collaborations
+  has_many :collaborators, through: :collaborations, source: :user
   
   before_create { self.private = self.private || false; true}
 
@@ -12,11 +15,11 @@ class Wiki < ActiveRecord::Base
 	
  		if user.admin?
  				all
- 		elsif user.premium? 		
+ 		elsif user.premium? 
  				where("(private = ?) OR ((private = ?) AND (user_id = ?))", false, true, user.id)
  		elsif user.standard?
  				where(private: false)
- 				#where("(private = ?) OR ((private = ?) AND (user_id = ?))", false, false, user.id)
  		end
   end
+
 end

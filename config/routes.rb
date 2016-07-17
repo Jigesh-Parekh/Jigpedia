@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
   
+  
   resources :charges, only: [:new] do 
     collection do 
       post :charge 
       post :downgrade
     end
   end
-  resources :wikis
+  resources :wikis do
+    #resources :collaborators, only: [:index, :destroy, :create]
+    #wiki id needed for collaborators - nest inside wiki? 
+    member do
+      post :add_collaborator 
+      delete '/remove_collaborator/:user_id', to: 'wikis#remove_collaborator', as: :remove_collaborator
+    end
+  end
   devise_for :users
   get 'welcome/index'
 
