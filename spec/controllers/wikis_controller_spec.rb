@@ -5,7 +5,7 @@ include Devise::TestHelpers
 RSpec.describe WikisController, type: :controller do
   
 let(:my_user) {create(:user)}
-let(:my_wiki) {create(:wiki)}
+let(:my_wiki) {create(:wiki, user: my_user)}
 
 
 before :each do
@@ -76,6 +76,16 @@ describe "PUT update" do
         delete :destroy, {id: my_wiki.id}
         expect(response).to redirect_to wikis_path
       end
+  end
+
+
+  context "Add Collaborator" do
+    before do
+      create_session(other_user)
+      create_session(my_user)
+    end
+
+
   end
 
 end
