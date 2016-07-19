@@ -20,7 +20,7 @@
   </div> 
  <% end %>
 
-<% if @user.premium? || @user.admin? %> 
+<% if current_user.premium? || current_user.admin? %> 
     <% if @wiki.private %> 
         <%= form_for :collaborator, url: add_collaborator_wiki_path(@wiki) do |f| %>   
           <div class= "container">
