@@ -1,5 +1,5 @@
 require 'rails_helper'
-include Devise::TestHelpers
+
 
 
 RSpec.describe WikisController, type: :controller do

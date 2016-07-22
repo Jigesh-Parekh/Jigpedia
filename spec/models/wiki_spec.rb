@@ -14,8 +14,8 @@ RSpec.describe Wiki, type: :model do
 
 	describe "role filtration" do
 	    before do
-	      @public_topic = Wiki.create!(title: "tasdfasdfasdf", body: "asdfasdfasdfasdfasdf", private: false, user: user)
-	      @private_topic = Wiki.create!(title: "tasdfasdfasdf", body: "asdfasdfasdfasdfasdf", private: true, user: user)
+	      @public_topic = Wiki.create!(title: "tasdfasdfasdf", body: "asdfasdfasdfasdfasdf", private: false, creator: user)
+	      @private_topic = Wiki.create!(title: "tasdfasdfasdf", body: "asdfasdfasdfasdfasdf", private: true, creator: user)
 	    end
 
 
