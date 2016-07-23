@@ -27,6 +27,7 @@ source 'https://rubygems.org'
  gem 'stripe'
 
  group :development, :test do
+   gem 'stripe-ruby-mock', '~> 2.3.0', :require => 'stripe_mock'
    gem 'byebug'
    gem 'spring'
    gem 'rspec-rails'
